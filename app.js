@@ -31,6 +31,13 @@ app.post(endpoint, function (req, res) {
     res.status(200).json(myobj);
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+app.get('/', function (req, res) {
+    return res.status(200).send({
+        "service_name":"users",
+        "version": "1.0"
+    })
+});
+
+app.listen(3002, () => console.log('Example app listening on port 3002!'))
 
 module.exports = app
