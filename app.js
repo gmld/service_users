@@ -20,12 +20,17 @@ app.post(endpoint, function (req, res) {
          url: myurl1,
          form: {username: myobj.username} }, function(error, response, body){
              createcode = response.statusCode
+             console.log(createcode)
+             console.log(response)
     });
 
     request.post({
         url: myurl2,
         form: myobj}, function(error, response, body){
             createcode = response.statusCode
+            console.log(createcode)
+            console.log(response)
+
     });
     
     res.status(200).json(myobj);
